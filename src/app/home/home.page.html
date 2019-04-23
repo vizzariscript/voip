@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        IONIC voIP TEST
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    
+    <div text-center>
+      <h2>This is a voIP Service</h2>
+    </div>
+    <ion-list>
+        <ion-item>
+            <ion-label>
+              <h3>Ramiro Vizzari</h3>
+            </ion-label>
+            <ion-icon (click)="call('rvizzari@iptel.org')" color="primary" name="call" slot="end"></ion-icon>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+                <h3>Another User</h3>
+              </ion-label>
+              <ion-icon (click)="call('rvizzari@iptel.org')" color="primary" name="call" slot="end"></ion-icon>
+            </ion-item>
+      </ion-list>
+    <br>
+    <!-- <ion-button expand="block" *ngIf="!this.status.callConfirmed" (click)="call()">LLamar</ion-button> -->
+    
+    <ion-button expand="block" *ngIf="this.status.callConfirmed" color="danger" (click)="this.callSession.terminate()">Cortar</ion-button>
+  
+    <p>Progress: {{this.status.calling}}</p>
+    <p>Failed: {{this.status.callFailed}}</p>
+    <p>Confirmed: {{this.status.callConfirmed}}</p>
+    <p>Ended: {{this.status.callFailed}}</p>
+  </ion-content>
+  
