@@ -107,8 +107,8 @@ export class HomePage {
     this.socket = new Jssip.WebSocketInterface('wss://sip.iptel.org:8081');
     this.configuration = {
       sockets: [this.socket],
-      uri: 'sip:mmarelli@iptel.org',
-      password: 'Copado156'
+      uri: 'sip:uri',
+      password: 'pass'
     };
 
     this.session = new Jssip.UA(this.configuration);
